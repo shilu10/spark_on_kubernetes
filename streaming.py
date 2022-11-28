@@ -13,8 +13,8 @@ import joblib
 
 scala_version = '2.12'
 spark_version = '3.1.2'
-kafka_server = "172.23.0.1:9092"
-topic_name = "top"
+kafka_server = "my-cluster-kafka-bootstrap:9091"
+topic_name = "demo"
 
 packages = [
     f'org.apache.spark:spark-sql-kafka-0-10_{scala_version}:{spark_version}',
