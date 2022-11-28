@@ -33,7 +33,6 @@ df = spark \
 
 query = df \
     .writeStream \
-    .outputMode("complete") \
     .format("console") \
     .start()
 
