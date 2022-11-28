@@ -31,11 +31,8 @@ df = spark \
     .option("subscribe", topic_name) \
     .load()
 
-castDf = df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)") 
+def processing_func(batch_df, batch_id): 
+    batch_df = batch_df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)")
+    batch_df.show()
 
-query = castDf \
-    .writeStream \
-    .format("console") \
-    .start()
-
-query.awaitTermination()
+writer = df.writeStream.trigger(processingTime='30 seconds').foreachBatch(processing_func).start().awaitTermination()
