@@ -7,12 +7,11 @@ import json
 
 scala_version = '2.12'
 spark_version = '3.1.2'
-kafka_server = "my-cluster-kafka-bootstrap:9091"
+kafka_server = "my-cluster-kafka-bootstrap:9092"
 topic_name = "demo"
 
 packages = [
-    f'org.apache.spark:spark-sql-kafka-0-10_{scala_version}:{spark_version}',
-    'org.apache.kafka:kafka-clients:3.2.1'
+    f'org.apache.spark:spark-sql-kafka-0-10_{scala_version}:{spark_version}'
 ]
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
