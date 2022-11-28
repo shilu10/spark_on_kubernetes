@@ -31,8 +31,9 @@ df = spark \
     .option("subscribe", topic_name) \
     .load()
 
+castDf = df.selectExpr("CAST(key AS STRING)", "CAST(value AS STRING)") 
 
-query = df \
+query = castDf \
     .writeStream \
     .format("console") \
     .start()
