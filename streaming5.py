@@ -12,7 +12,8 @@ topic_name = "demo"
 
 packages = [
     f'org.apache.spark:spark-sql-kafka-0-10_{scala_version}:{spark_version}',
-    'org.apache.kafka:kafka-clients:3.2.1'
+    'org.apache.kafka:kafka-clients:3.2.1',
+    'org.apache.spark.sql.kafka010.KafkaBatchInputPartition'
 ]
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
