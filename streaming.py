@@ -4,12 +4,6 @@ from pyspark.sql.functions import col, udf
 from pyspark.sql import SparkSession 
 from pyspark.streaming import StreamingContext
 import json
-from tensorflow.keras.models import load_model
-from abc import abstractmethod, abstractstaticmethod
-from keras.preprocessing.sequence import TimeseriesGenerator
-import numpy as np
-import pandas as pd
-import joblib
 
 scala_version = '2.12'
 spark_version = '3.1.2'
